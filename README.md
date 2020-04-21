@@ -151,3 +151,9 @@ replicate-ignore-table=bet.v_same_event
 Проверить на slave'e:   
 **`mysql> SELECT * FROM bookmaker;`**   
 ![show slave status](https://github.com/Hanafeevrus/mysql_replication/blob/master/show%20slave%20status.png)    
+также можно проверить изменения в лог файлах:   
+**`mysqlbinlog /var/lib/mysql/slave-relay-bin.000007`**   
+где [slave-relay-bin.000007](https://github.com/Hanafeevrus/mysql_replication/blob/master/slave-relay-bin.000007) - бинарный файл лога.   
+Добавленные строки    
+`INSERT INTO bookmaker (id,bookmaker_name) VALUES(1,'1xbet')`   
+![фрагмент лога](https://github.com/Hanafeevrus/mysql_replication/blob/master/log_slave.png)
