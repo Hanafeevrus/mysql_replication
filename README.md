@@ -124,7 +124,9 @@ replicate-ignore-table=bet.v_same_event
 | odds |
 | outcome |
 +---------------------+ # видим что таблиц v_same_event и events_on_demand нет    
-```   
+```       
+В конфиг [`my.cnf`](https://github.com/Hanafeevrus/mysql_replication/blob/master/conf/my.cnf) добавлено игнорирование ошибок:   
+`slave-skip-errors = 1007,1396`   
 Подклячаем и запускаем слейв:   
 **`mysql> CHANGE MASTER TO MASTER_HOST = "192.168.112.60", MASTER_PORT = 3306, MASTER_USER = "repl", MASTER_PASSWORD = "!passforrepl1234", MASTER_AUTO_POSITION = 1;`**   
 **`mysql> START SLAVE;`**   
