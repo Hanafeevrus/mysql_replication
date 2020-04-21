@@ -19,6 +19,7 @@ Vagrant.configure(2) do |config|
 	sudo cp /vagrant/conf/conf.d/* /etc/my.cnf.d/
 	sudo rm /etc/my.cnf.d/01-base_slave.cnf
 	sudo rm /etc/my.cnf.d/05-binlog_slave.cnf
+	sudo systemctl start mysql
     	SHELL
   end
 
@@ -39,6 +40,7 @@ Vagrant.configure(2) do |config|
 	sudo cp /vagrant/conf/my.cnf /etc/my.cnf
 	sudo rm /etc/my.cnf.d/01-base.cnf
         sudo rm /etc/my.cnf.d/05-binlog.cnf
+	sudo systemctl start mysql
     SHELL
     end
   end
